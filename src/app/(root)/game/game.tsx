@@ -46,11 +46,13 @@ export default function GamePageDetail({
         setLoading(false);
       }
     };
-    if (getCookie("userId") && getCookie("token")) {
-      getGameDetail();
-    } else {
-      setIsUser(true);
-    }
+    // if (getCookie("userId") && getCookie("token")) {
+    //   getGameDetail();
+    // } else {
+    //   setIsUser(true);
+    // }
+    getGameDetail();
+
   }, [idGame]);
   return (
     <div className="h-dvh w-full">
