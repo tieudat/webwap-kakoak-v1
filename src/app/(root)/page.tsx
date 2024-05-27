@@ -2,14 +2,10 @@
 
 import Banner from "../_components/Banner";
 import Header from "../_components/Header";
-import axios from "axios";
 import ListGame from "../_components/ListGame";
-import { useEffect, useState } from "react";
 import LoadingCustom from "@/components/ui/LoadingCustom";
 import { cookies, headers } from "next/headers";
 import { getAllCookie, getCookie, setCookie } from "../utils/cookie";
-
-let headerSave: any = null;
 
 async function getData(msisdn: any, security: any) {
   const header = new Headers();
