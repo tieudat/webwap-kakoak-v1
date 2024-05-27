@@ -58,7 +58,7 @@ export default function GamePage() {
   }, [idGame]);
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense>
       <div className="h-dvh w-full">
         <div className="flex h-full w-full flex-col">
           <Header titleName={gameName} isGame={true} />
