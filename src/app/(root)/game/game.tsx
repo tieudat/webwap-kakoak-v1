@@ -1,3 +1,5 @@
+"use client"
+
 import FrameGame from "@/app/_components/FrameGame";
 import Header from "@/app/_components/Header";
 import { getCookie } from "@/app/utils/cookie";
