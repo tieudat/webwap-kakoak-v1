@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import Header from "@/app/_components/Header";
 import { useSearchParams } from "next/navigation";
 import Iframe from "react-iframe";
@@ -55,31 +55,32 @@ export default function GamePage() {
     //   setIsUser(true);
     // }
     getGameDetail();
-
   }, [idGame]);
 
   return (
-    <div className="h-dvh w-full">
-      <div className="flex h-full w-full flex-col">
-        <Header titleName={gameName} isGame={true} />
-        {loading && <LoadingCustom />}
-        <div className="flex h-[calc(100%-96px)] w-full items-center justify-center">
-          {!loading && !isUser && (
-            <div className="h-full w-full">
-              <FrameGame dataGame={dataGame} />
-            </div>
-          )}
+    <Suspense fallback={<div>Loading...</div>}>
+      <div className="h-dvh w-full">
+        <div className="flex h-full w-full flex-col">
+          <Header titleName={gameName} isGame={true} />
+          {loading && <LoadingCustom />}
+          <div className="flex h-[calc(100%-96px)] w-full items-center justify-center">
+            {!loading && !isUser && (
+              <div className="h-full w-full">
+                <FrameGame dataGame={dataGame} />
+              </div>
+            )}
 
-          {isUser && (
-            <Alert className={cn(`m-4`)}>
-              <AlertTitle>Xác thực thất bại</AlertTitle>
-              <AlertDescription>
-                Bạn không thể chơi game nếu không xác thực thành công!
-              </AlertDescription>
-            </Alert>
-          )}
+            {isUser && (
+              <Alert className={cn(`m-4`)}>
+                <AlertTitle>Xác thực thất bại</AlertTitle>
+                <AlertDescription>
+                  Bạn không thể chơi game nếu không xác thực thành công!
+                </AlertDescription>
+              </Alert>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </Suspense>
   );
 }
