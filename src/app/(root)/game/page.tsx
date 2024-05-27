@@ -56,7 +56,7 @@ export default function GamePage() {
     // }
     getGameDetail();
 
-  }, []);
+  }, [idGame]);
 
   return (
     <div className="h-dvh w-full">
