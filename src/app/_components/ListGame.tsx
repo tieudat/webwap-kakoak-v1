@@ -38,13 +38,14 @@ export default function ListGame({
                           key={i.id}
                           onClick={() => openGame(i)}
                         >
-                          <Image
+                          {/* <Image
                             src={i.banner}
                             alt={i.name}
                             width={168}
                             height={117}
                             className="!h-[117px] rounded-b-[10px] object-cover"
-                          />
+                          /> */}
+                          <img src={i.banner} alt={i.name} width={168} height={117} className="!h-[117px] rounded-b-[10px] object-cover" />
                           <span className="mx-[10.5px] text-base font-semibold text-white">
                             {i.name}
                           </span>

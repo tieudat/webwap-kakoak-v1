@@ -6,12 +6,13 @@ import ListGame from "../_components/ListGame";
 import LoadingCustom from "@/components/ui/LoadingCustom";
 import { cookies, headers } from "next/headers";
 import { getAllCookie, getCookie, setCookie } from "../utils/cookie";
+const domain = false ? 'https://kakoakgames.tls.tl' : 'http://10.226.40.158:8080'
 
 async function getData(msisdn: any, security: any) {
   const header = new Headers();
   header.append("Origin", "http://192.168.1.137:3000");
   const res = await fetch(
-    `http://10.226.40.158:8080/RingMeAPI/gamehtml5/getListGameCategoryTest?msisdn=${msisdn}&timestamp=${new Date().getTime()}&security=${security}&language=en&size=10`,
+    `${domain}/RingMeAPI/gamehtml5/getListGameCategoryTest?msisdn=${msisdn}&timestamp=${new Date().getTime()}&security=${security}&language=en&size=10`,
     { method: "GET", headers: header },
   );
 
