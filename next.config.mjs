@@ -5,7 +5,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'http',
-        hostname: 'kakoakgames.ringme.vn',
+        hostname: '10.226.40.158',
         port: '',
         pathname: '/**',
       },
