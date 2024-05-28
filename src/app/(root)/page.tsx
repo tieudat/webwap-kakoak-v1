@@ -11,9 +11,10 @@ async function getData(msisdn: any, security: any) {
   const header = new Headers();
   header.append("Origin", "http://192.168.1.137:3000");
   const res = await fetch(
-    `https://kakoakgames.tls.tl/RingMeAPI/gamehtml5/getListGameCategoryTest?msisdn=${msisdn}&timestamp=${new Date().getTime()}&security=${security}&language=en&size=10`,
+    `http://10.226.40.158:8080/RingMeAPI/gamehtml5/getListGameCategoryTest?msisdn=${msisdn}&timestamp=${new Date().getTime()}&security=${security}&language=en&size=10`,
     { method: "GET", headers: header },
   );
+
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
